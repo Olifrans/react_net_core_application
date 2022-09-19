@@ -1,5 +1,3 @@
-import { type } from "@testing-library/user-event/dist/types/utility";
-
 const initialState = {
   expenses: [],
 };
@@ -13,8 +11,10 @@ export const ActionCreators = {
 };
 
 export default (state = initialState, action) => {
-  switch ((action, type)) {
+  switch (action.type) {
     case ActionTypes.SET_EXPENSES:
       return { ...state, expenses: [...action.payload] };
+    default:
+      return state;
   }
 };
