@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { NewExpense } from "../services/expenses";
 
 export default () => {
   const descriptions = ["Mantimentos", "Energia", "Alimentos", "Tranportes"];
   const [amount, setAmount] = useState(0);
   const [description, setDescription] = useState(descriptions[0]);
   const [isNewExpense, setIsNewExpense] = useState(true);
+  const dispatch = useDispatch();
 
   return (
     <Form
       onSubmit={(event) => {
         event.preventDefault();
         if (isNewExpense) {
-          //create a new expense
+          //Criar nova despesa
+          NewExpense(dispatch, { description: description, amount: amount });
         } else {
-          //edit a new expense
+          //Editar despesa
         }
       }}
     >
@@ -40,18 +44,19 @@ export default () => {
             onChange={(event) => setAmount(event.target.value)}
           />
         </Col>
+
         <div style={{ marginTop: "auto" }}>
           {isNewExpense ? (
             <Button variant="primary" type="submit">
-              Add
+              Adcionar
             </Button>
           ) : (
             <div>
-              <Button variant="danger">Delete</Button>
+              <Button variant="danger">Deletar</Button>
               <Button variant="success" type="submit">
-                Save
+                Salvar
               </Button>
-              <Button variant="default">Cancel</Button>
+              <Button variant="default">Cancelar</Button>
             </div>
           )}
         </div>
