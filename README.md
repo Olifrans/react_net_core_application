@@ -44,3 +44,13 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+# Libs
+https://react-bootstrap.github.io/getting-started/introduction
+npm install react-bootstrap bootstrap
+
+Adcionar no  index.js o import abaixo:
+import 'bootstrap/dist/css/bootstrap.min.css';  
