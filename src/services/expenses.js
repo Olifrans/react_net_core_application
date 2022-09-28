@@ -17,11 +17,8 @@ export const GetExpenses = async (dispatch) => {
   }
 };
 
-
-
 export const NewExpense = async (dispatch, expense) => {
   try {
-    //api call
     dispatch(
       ActionCreators.newExpense({
         id: 10,
@@ -31,6 +28,22 @@ export const NewExpense = async (dispatch, expense) => {
     );
 
     // dispatch(ActionCreators.setExpenses(expenses));
+  } catch {
+    console.log("Error!");
+  }
+};
+
+export const EditExpense = async (dispatch, expense) => {
+  try {
+    dispatch(ActionCreators.editExpense(expense));
+  } catch {
+    console.log("Error!");
+  }
+};
+
+export const DeleteExpense = async (dispatch, expense) => {
+  try {
+    dispatch(ActionCreators.deleteExpense(expense));
   } catch {
     console.log("Error!");
   }
