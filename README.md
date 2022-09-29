@@ -54,3 +54,8 @@ npm install react-bootstrap bootstrap
 
 Adcionar no  index.js o import abaixo:
 import 'bootstrap/dist/css/bootstrap.min.css';  
+
+
+
+# Axios para comunicação com a Api Net Core
+yarn add axios
