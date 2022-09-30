@@ -7,7 +7,8 @@ import ExpenseForm from "./ExpenseForm";
 // export default ExpenseList = () => {
 export default () => {
   const dispatch = useDispatch();
-  const expenses = useSelector((state) => state.expensesReducer.expenses);
+  const expenses = useSelector((state) => state.expensesSlice.expenses);
+  // const expenses = useSelector((state) => state.expensesReducer.expenses);
 
   useEffect(() => {
     GetExpenses(dispatch);

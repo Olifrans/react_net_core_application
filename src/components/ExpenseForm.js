@@ -25,12 +25,15 @@ export default ({ expense, setIsEditing }) => {
         event.preventDefault();
         if (isNewExpense) {
           //Criar nova despesa
-          NewExpense(dispatch, { description: description, amount: amount });
+          NewExpense(dispatch, {
+            description: description,
+            amount: Number(amount),
+          });
         } else {
           EditExpense(dispatch, {
             id: expense.id,
             description: description,
-            amount: amount,
+            amount: Number(amount),
           });
           setIsEditing(false);
         }
