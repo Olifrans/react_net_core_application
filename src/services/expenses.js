@@ -3,6 +3,10 @@ import {
   newExpense,
   editExpense,
   deleteExpense,
+  setExpensesError,
+  newExpenseError,
+  editExpenseError,
+  deleteExpenseError,
 } from "../app/expensesSlice";
 import * as axios from "axios";
 
@@ -13,19 +17,17 @@ const axiosInstance = axios.create({
 export const GetExpenses = async (dispatch) => {
   try {
     //api get axios-backend
-    //const { data } = await axiosInstance.get();
-    // dispatch(setExpenses(data));
+    const { data } = await axiosInstance.get();
+    dispatch(setExpenses(data));
 
-
-    const expenses = [
-      { id: 1, description: "Teste", amount: 45.23 },
-      { id: 2, description: "Teste01", amount: 45.23 },
-      { id: 1, description: "Teste02", amount: 45.23 },
-    ];
-    dispatch(setExpenses(expenses));
-    
+    // const expenses = [
+    //   { id: 1, description: "Teste", amount: 45.23 },
+    //   { id: 2, description: "Teste01", amount: 45.23 },
+    //   { id: 1, description: "Teste02", amount: 45.23 },
+    // ];
+    // dispatch(setExpenses(expenses));
   } catch {
-    console.log("Error!");
+    dispatch(setExpensesError());
   }
 };
 
@@ -33,9 +35,9 @@ export const NewExpense = async (dispatch, expense) => {
   try {
     //api post axios-backend
     const { data } = await axiosInstance.post("", expense);
-    dispatch(setExpenses(data));
+    dispatch(newExpense(data));
   } catch {
-    console.log("Error!");
+    dispatch(newExpenseError());
   }
 };
 
@@ -45,7 +47,7 @@ export const EditExpense = async (dispatch, expense) => {
     await axiosInstance.put("", expense);
     dispatch(editExpense(expense));
   } catch {
-    console.log("Error!");
+    dispatch(editExpenseError());
   }
 };
 
@@ -56,6 +58,6 @@ export const DeleteExpense = async (dispatch, expense) => {
     await axiosInstance.delete("", { data: { ...expense } });
     dispatch(deleteExpense(expense));
   } catch {
-    console.log("Error!");
+    dispatch(deleteExpenseError());
   }
 };

@@ -62,6 +62,6 @@ yarn add axios
 
 
 
-# React-Toastify permite adicionar notificações ao seu aplicativo com facilidade
+# React-Toastify permite adicionar notificações com facilidade
 yarn add react-toastify
 npm i react-toastify

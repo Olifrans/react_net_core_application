@@ -6,11 +6,11 @@ const App = () => (
   <div style={{ width: "60%", margin: "auto" }}>
     <ToastContainer />
 
-    <h3>Post-Api Dados Redux-React</h3>
+    <h3>Teste-Api-Post-Dados Redux-React</h3>
     <ExpenseForm />
     <hr style={{ border: "1px solid grey" }} />
 
-    <h3>Get-Api Dados Redux-React</h3>
+    <h3>Teste-Api-Get-Dados Redux-React</h3>
     <ExpenseList />
   </div>
 );
