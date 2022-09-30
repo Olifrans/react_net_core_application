@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import { toast } from "react-toastify";
 
 export const expensesSlice = createSlice({
   name: "expenses",
@@ -8,6 +9,7 @@ export const expensesSlice = createSlice({
 
   reducers: {
     setExpenses: (state, action) => {
+      // toast.success("Teste realizado com sucesso usando o ReactToastify!");
       return { ...state, expenses: [...action.payload] };
     },
 
@@ -32,7 +34,6 @@ export const expensesSlice = createSlice({
       return { ...state, expenses: [...expenses] };
     },
   },
-
 });
 
 export const { setExpenses, newExpense, editExpense, deleteExpense } =

@@ -59,3 +59,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 # Axios para comunicação com a Api Net Core
 yarn add axios
+
+
+
+# React-Toastify permite adicionar notificações ao seu aplicativo com facilidade
+yarn add react-toastify
+npm i react-toastify
